@@ -18,7 +18,6 @@ public class CompassController {
     public String learnDegrees(@RequestBody Map<String, String> data){
         data.forEach((k,v) ->
                 worldSides.put(Double.parseDouble(v.split("-")[0].trim()), k));
-        worldSides.forEach((k,v) -> System.out.println("k: " + k + " v: " + v));
         if (!worldSides.containsKey(0.0)){worldSides.put(0.0, "North");}
         return "Данные успешно обработаны";
     }
